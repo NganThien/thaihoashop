@@ -5,3 +5,8 @@ dist
 *.log
 .DS_Store
 .netlify
+
+# Supabase CLI (thông tin kết nối project trên máy, không đưa lên GitHub)
+supabase/.temp
+supabase/.branches
+supabase/.env*
