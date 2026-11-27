@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+/* ---------- Kiểu dùng chung: nút, ô nhập (chữ và nút đủ to cho điện thoại) ---------- */
+@layer components {
+  .btn {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-4 text-base font-semibold transition active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply bg-teal-700 text-white hover:bg-teal-800;
+  }
+  .btn-secondary {
+    @apply border border-slate-300 bg-white text-slate-700 hover:bg-slate-50;
+  }
+  .btn-danger {
+    @apply bg-red-600 text-white hover:bg-red-700;
+  }
+  .btn-sm {
+    @apply min-h-10 rounded-lg px-3 text-sm;
+  }
+  .btn-icon {
+    @apply inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-lg text-slate-500 hover:bg-slate-100 disabled:opacity-30;
+  }
+  .input {
+    @apply min-h-12 w-full rounded-xl border border-slate-300 bg-white px-3 text-base text-slate-800 outline-none placeholder:text-slate-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20;
+  }
+  .label {
+    @apply mb-1 block text-sm font-medium text-slate-600;
+  }
+  .card {
+    @apply rounded-2xl border border-slate-200 bg-white;
+  }
+  .chip {
+    @apply min-h-10 shrink-0 rounded-full border px-4 text-sm font-semibold whitespace-nowrap transition;
+  }
+  .chip-on {
+    @apply border-teal-700 bg-teal-700 text-white;
+  }
+  .chip-off {
+    @apply border-slate-300 bg-white text-slate-700 hover:bg-slate-50;
+  }
+}
+
+html,
+body {
+  @apply bg-slate-100 text-slate-800 antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------- In hóa đơn khổ 80mm ---------- */
+#print-area {
+  display: none;
+}
+
+@media print {
+  @page {
+    size: 80mm auto;
+    margin: 0;
+  }
+  html,
+  body {
+    background: #fff !important;
+  }
+  #root {
+    display: none !important;
+  }
+  #print-area {
+    display: block;
+  }
+  .receipt {
+    width: 72mm;
+    margin: 0 auto;
+    padding: 3mm 0;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+}
