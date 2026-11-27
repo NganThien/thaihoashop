@@ -1,7 +1,11 @@
 -- =====================================================================
---  THÁI HÒA SHOP - Cơ sở dữ liệu
---  Cách dùng: mở Supabase > SQL Editor > New query, dán toàn bộ file
---  này vào rồi bấm "Run". Có thể chạy lại nhiều lần mà không mất dữ liệu.
+--  THÁI HÒA SHOP - MIGRATION 1: KHỞI TẠO CƠ SỞ DỮ LIỆU
+--  Nhóm món, món, hóa đơn, hàm tạo hóa đơn & thống kê, kho ảnh, món mẫu.
+--
+--  Áp dụng: npx supabase db push   (xem README, mục "Cập nhật cơ sở dữ liệu")
+--  hoặc dán toàn bộ file vào Supabase > SQL Editor > Run.
+--  Có thể chạy lại nhiều lần mà không mất dữ liệu.
+--  ĐÃ ÁP DỤNG LÊN SUPABASE THÌ KHÔNG SỬA FILE NÀY - thay đổi mới viết vào migration mới.
 -- =====================================================================
 
 -- ---------------------------------------------------------------------

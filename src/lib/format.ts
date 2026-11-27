@@ -76,5 +76,19 @@ export function errorMessage(err: unknown): string {
   if (/failed to fetch|network/i.test(msg)) return 'Không kết nối được máy chủ. Kiểm tra mạng rồi thử lại.'
   if (/invalid login credentials/i.test(msg)) return 'Sai email hoặc mật khẩu.'
   if (/jwt|not authenticated/i.test(msg)) return 'Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại.'
+  // Chưa chạy file migration phần Mua hàng trên Supabase
+  if (/schema cache|does not exist/i.test(msg) && /ingredients|batches|purchase|profit_report|save_batch_product/i.test(msg))
+    return 'Chưa cập nhật cơ sở dữ liệu cho phần Mua hàng: hãy chạy "npx supabase db push" (xem README).'
   return msg
+}
+
+/** "2026-11-30" -> "30/11/2026" */
+export function formatDate(date: string): string {
+  const [y, m, d] = date.slice(0, 10).split('-')
+  return `${d}/${m}/${y}`
+}
+
+/** Mốc thời gian (ISO) -> ngày theo giờ VN dạng "YYYY-MM-DD" */
+export function isoToVNDate(iso: string): string {
+  return new Date(iso).toLocaleDateString('en-CA', { timeZone: TZ })
 }
