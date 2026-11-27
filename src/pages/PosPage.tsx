@@ -339,7 +339,7 @@ export default function PosPage() {
       {cart.length > 0 && (
         <button
           onClick={() => setCartOpen(true)}
-          className="fixed inset-x-3 bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-20 flex min-h-14 items-center justify-between rounded-2xl bg-teal-700 px-4 text-white shadow-lg md:bottom-4 lg:hidden"
+          className="fixed inset-x-3 bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-20 flex min-h-14 items-center justify-between rounded-2xl bg-teal-700 px-4 text-white shadow-lg lg:hidden"
         >
           <span className="font-semibold">🛒 {itemCount} món</span>
           <span className="text-lg font-bold">{formatMoney(total)} ›</span>
